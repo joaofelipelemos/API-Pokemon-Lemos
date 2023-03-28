@@ -2,7 +2,7 @@
 
 Projeto inicial de imersão em desenvolvimento.
 
-Será consumida uma API do Pokemon disponível em <https://pokeapi.co>
+Será consumida uma API do Pokemon disponível em <https://pokeapi.co> e criada uma visualização mobile-first.
 
 ## Stack utilizada
 
