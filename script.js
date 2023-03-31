@@ -1,7 +1,10 @@
 const pokemon_name = document.querySelector("#pokemon_name");
 const pokemon_id = document.querySelector("#pokemon_id");
 const pokemon_hero = document.querySelector("#pokemon_hero");
-const pokemon_type = document.querySelector('#pokemon_type')
+const pokemon_type = document.querySelector("#pokemon_type");
+const pokemon_specie = document.getElementById("#pokemon_specie");
+const pokemon_abilities1 = document.querySelector("#pokemon_abilities1");
+const pokemon_abilities2 = document.querySelector("#pokemon_abilities2");
 
 async function pesquisaPokemon(pokemon) {
   var mensagemErro = document.querySelector("#erro");
@@ -16,12 +19,17 @@ async function pesquisaPokemon(pokemon) {
     }
 
     pokemon_name.innerHTML = consultaPokeJSON.name;
-    pokemon_id.innerHTML = consultaPokeJSON.id;
+    pokemon_id.innerHTML = "#" + consultaPokeJSON.id;
     pokemon_hero.src =
       consultaPokeJSON["sprites"]["versions"]["generation-v"]["black-white"][
         "animated"
       ]["front_default"];
-    pokemon_type.innerHTML = ['types']['0']['type']
+    pokemon_type.innerHTML =
+      "Tipo: " + consultaPokeJSON["types"]["0"]["type"]["name"];
+    pokemon_abilities1.innerHTML =
+      consultaPokeJSON["abilities"]["0"]["ability"]["name"] + "<br>";
+    pokemon_abilities2.innerHTML =
+      consultaPokeJSON["abilities"]["1"]["ability"]["name"] + "<br>";
 
     console.log(consultaPokeJSON);
     return consultaPokeJSON;
@@ -31,5 +39,28 @@ async function pesquisaPokemon(pokemon) {
   }
 }
 
+async function infoSpecie(pokemon) {
+  var mensagemErro = document.querySelector("#erro");
+  mensagemErro.innerHTML = "";
+  try {
+    var infoSpecie = await fetch(
+      `https://pokeapi.co/api/v2/pokemon-species/${pokemon}`
+    );
+    var infoSpecieJSON = await infoSpecie.json();
+    if (infoSpecieJSON.erro) {
+      throw Error("Pesquisa não realizada");
+    }
+
+    // pokemon_specie.innerHTML = infoSpecieJSON.gender_rate;
+
+    console.log(infoSpecieJSON);
+    return infoSpecieJSON;
+  } catch (erro) {
+    mensagemErro.innerHTML = `<p> Pesquisa inválida de Espécie </p>`;
+    console.log(erro);
+  }
+}
+
 var pokemon = document.querySelector("#pokemon_search");
 pokemon.addEventListener("focusout", () => pesquisaPokemon(pokemon.value));
+pokemon.addEventListener("focusout", () => infoSpecie(pokemon.value));
