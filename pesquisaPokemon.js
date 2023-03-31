@@ -5,6 +5,8 @@ const pokemon_type = document.querySelector("#pokemon_type");
 const pokemon_specie = document.getElementById("#pokemon_specie");
 const pokemon_abilities1 = document.querySelector("#pokemon_abilities1");
 const pokemon_abilities2 = document.querySelector("#pokemon_abilities2");
+const pokemon_abilities3 = document.querySelector("#pokemon_abilities3");
+const habilidades = document.querySelector('#habilidades');
 
 async function pesquisaPokemon(pokemon) {
   var mensagemErro = document.querySelector("#erro");
@@ -27,9 +29,11 @@ async function pesquisaPokemon(pokemon) {
     pokemon_type.innerHTML =
       "Tipo: " + consultaPokeJSON["types"]["0"]["type"]["name"];
     pokemon_abilities1.innerHTML =
-      consultaPokeJSON["abilities"]["0"]["ability"]["name"] + "<br>";
-    pokemon_abilities2.innerHTML =
-      consultaPokeJSON["abilities"]["1"]["ability"]["name"] + "<br>";
+    "<il>"+consultaPokeJSON["abilities"]["0"]["ability"]["name"]+"</il>";
+      pokemon_abilities2.innerHTML =
+      "<il>"+consultaPokeJSON["abilities"]["1"]["ability"]["name"]+"</il>";
+      habilidades.innerHTML = "Habilidades:"
+      
 
     console.log(consultaPokeJSON);
     return consultaPokeJSON;

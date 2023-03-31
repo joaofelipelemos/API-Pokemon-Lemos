@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src=""></script>
     <title>Consulta em API - Pokemon</title>
   </head>
   <body>
@@ -15,11 +14,15 @@
       <span>logo pokemon</span>
     </nav>
     <main class="container">
-      <div>
-        <input type="text" id="pokemon_search" />
+      <div class="container__pesquisa">
+        <input
+          type="text"
+          id="pokemon_search"
+          placeholder="Digite para pesquisar"
+        />
         <span id="erro"></span>
       </div>
-      <div>
+      <div class="pokemon__informações">
         <span id="pokemon_id"></span>
         <strong id="pokemon_name"></strong>
       </div>
@@ -30,11 +33,14 @@
         <span id="pokemon_type"></span>
       </div>
       <div>
-        <span id="pokemon_abilities1"></span>
-        <span id="pokemon_abilities2"></span>
+        <h3 id="habilidades"></h3>
+        <ol>
+          <p id="pokemon_abilities1"></p>
+          <p id="pokemon_abilities2"></p>
+        </ol>
       </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="pesquisaPokemon.js"></script>
   </body>
 </html>
