@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap" rel="stylesheet">
     <title>Consulta em API - Pokelemos</title>
   </head>
   <body>
-    <nav class="nav__menu">
-      <span>imagem menu</span>
-      <span>logo pokemon</span>
-    </nav>
-    <main class="container">
+    <nav class="nav__menu"></nav>
+    <main>
       <div class="container__pesquisa">
         <input
           type="text"
@@ -22,22 +22,28 @@
         />
         <span id="erro"></span>
       </div>
-      <div class="pokemon__informações">
+      <div class="pokemon__informacoes">
         <span id="pokemon_id"></span>
         <strong id="pokemon_name"></strong>
       </div>
-      <img src="#" id="pokemon_hero" alt="imagem do pokemon" />
-      <span id="pokemon_id"></span>
-      <div>
-        <span id="pokemon_specie"></span>
-        <span id="pokemon_type"></span>
-      </div>
-      <div>
-        <h3 id="habilidades"></h3>
-        <ol>
-          <p id="pokemon_abilities1"></p>
-          <p id="pokemon_abilities2"></p>
-        </ol>
+      <div class="pokemon__hero__container container">
+        <div class="div__hero">
+          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/029b8bd9-cb5a-41e4-9c7e-ee516face9bb/dayo3ow-7ac86c31-8b2b-4810-89f2-e6134caf1f2d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAyOWI4YmQ5LWNiNWEtNDFlNC05YzdlLWVlNTE2ZmFjZTliYlwvZGF5bzNvdy03YWM4NmMzMS04YjJiLTQ4MTAtODlmMi1lNjEzNGNhZjFmMmQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ooubhxjHp9PIMhVxvCFHziI6pxDAS8glXPWenUeomWs" id="pokemon_hero" alt="" />
+        </div>
+        <div class="pokemon__attributes">
+          <span id="pokemon_type"></span>
+          <div>
+            <h3 id="habilidades"></h3>
+            <ul class="unordened__list">
+              <li>
+                <span id="pokemon_abilities1"></span>
+              </li>
+              <li>
+                <span id="pokemon_abilities2"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </main>
 

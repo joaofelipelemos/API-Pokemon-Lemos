@@ -6,7 +6,7 @@ const pokemon_specie = document.getElementById("#pokemon_specie");
 const pokemon_abilities1 = document.querySelector("#pokemon_abilities1");
 const pokemon_abilities2 = document.querySelector("#pokemon_abilities2");
 const pokemon_abilities3 = document.querySelector("#pokemon_abilities3");
-const habilidades = document.querySelector('#habilidades');
+const habilidades = document.querySelector("#habilidades");
 
 async function pesquisaPokemon(pokemon) {
   var mensagemErro = document.querySelector("#erro");
@@ -15,6 +15,7 @@ async function pesquisaPokemon(pokemon) {
     var consultaPoke = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${pokemon}`
     );
+    
     var consultaPokeJSON = await consultaPoke.json();
     if (consultaPokeJSON.erro) {
       throw Error("Pesquisa não realizada");
@@ -28,17 +29,17 @@ async function pesquisaPokemon(pokemon) {
       ]["front_default"];
     pokemon_type.innerHTML =
       "Tipo: " + consultaPokeJSON["types"]["0"]["type"]["name"];
+    habilidades.innerHTML = "Habilidades:";
     pokemon_abilities1.innerHTML =
-    "<il>"+consultaPokeJSON["abilities"]["0"]["ability"]["name"]+"</il>";
-      pokemon_abilities2.innerHTML =
-      "<il>"+consultaPokeJSON["abilities"]["1"]["ability"]["name"]+"</il>";
-      habilidades.innerHTML = "Habilidades:"
-      
+      consultaPokeJSON["abilities"]["0"]["ability"]["name"];
+    pokemon_abilities2.innerHTML =
+      consultaPokeJSON["abilities"]["1"]["ability"]["name"];
+    pokemon_abilities3.innerHTML =
+      consultaPokeJSON["abilities"]["2"]["ability"]["name"];
 
-    console.log(consultaPokeJSON);
     return consultaPokeJSON;
   } catch (erro) {
-    mensagemErro.innerHTML = `<p> Pesquisa inválida </p>`;
+    mensagemErro.innerHTML = "";
     console.log(erro);
   }
 }

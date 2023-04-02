@@ -1,17 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap');
+
 *{
     box-sizing: border-box;
     text-align: center;
-    margin-top: 2em;
 }
+
 body{
     width: 90vw;
+    min-width: 400px;
+    height: 90vh;
     margin: auto;
+    background-color: azure;
+    font-family: sans-serif;
 
-    
 }
 main{
-    font-size: 2em;
-    border: solid 1px black;
+    font-size: 2rem;
+    
 }
 .nav__menu{
     display: flex;
@@ -27,13 +32,41 @@ img{
     width: 200px;
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon__attributes{
+    padding-left: 40px;
+}
+.pokemon__hero__container{
+    flex-wrap: wrap;
+}
+li{
+    text-transform: capitalize;
+    
+}
 #habilidades{
     padding-top: 10px;
 }
+#pokemon_search{
+    margin-bottom: 20px;
+    width: 250px;
+    height: 100px;
+    font-size: 2rem;
+    border-radius: 5%;
+    background-color: azure;
+}
+.pokemon__informacoes{
+    margin-bottom: 20px;
 
+}
 #pokemon_name{
     text-transform: capitalize ;
     font-weight: bold;
+
 }
 #pokemon_type{
     text-transform: capitalize;
