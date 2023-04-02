@@ -9,14 +9,14 @@ link funcional: https://joaofelipelemos.github.io/API-Pokemon-Lemos/
 ## Stack utilizada
 
 **Front-end:** 
-
-**Back-end:** 
-
+- HTML;
+- CSS;
+- JavaScript.
 
 
 ## Referência
 
- - [Dribbble - Pokedex](https://dribbble.com/tags/pokedex)
+ - 
 
 
 ## Autores
